@@ -1,26 +1,87 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* ---- Primary: deep healing teal-green ---- */
+  --color-primary-50: #f0f9f6;
+  --color-primary-100: #daefe8;
+  --color-primary-200: #b6dfd2;
+  --color-primary-300: #88c7b5;
+  --color-primary-400: #57a892;
+  --color-primary-500: #3a8c76;
+  --color-primary-600: #2c705f;
+  --color-primary-700: #265a4e;
+  --color-primary-800: #224941;
+  --color-primary-900: #1e3d37;
+  --color-primary-950: #0d2520;
+
+  /* ---- Accent: warm premium gold ---- */
+  --color-accent-50: #fbf6ea;
+  --color-accent-100: #f5e9c8;
+  --color-accent-200: #ecd393;
+  --color-accent-300: #e2bd5e;
+  --color-accent-400: #d9a83a;
+  --color-accent-500: #c4912c;
+  --color-accent-600: #a87324;
+  --color-accent-700: #875720;
+
+  /* ---- Neutrals ---- */
+  --color-cream: #f8f6f0;
+  --color-sand: #efe9dd;
+  --color-ink: #16211e;
+
+  /* ---- Shadows ---- */
+  --shadow-soft: 0 4px 24px -8px rgba(22, 33, 30, 0.12);
+  --shadow-card: 0 12px 40px -12px rgba(22, 33, 30, 0.18);
+
+  /* ---- Animation ---- */
+  --animate-fade-up: fadeUp 0.7s ease-out forwards;
 }
 
+/* next/font variables ko Tailwind theme se jodne ke liye */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-jakarta);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: var(--color-cream);
+    color: var(--color-ink);
+    font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection {
+    background-color: var(--color-primary-600);
+    color: #fff;
+  }
+}
+
+@layer utilities {
+  .container-px {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+  @media (min-width: 1024px) {
+    .container-px {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
 }
