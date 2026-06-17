@@ -88,7 +88,7 @@ export default function Hero() {
         <div className="relative animate-fade-up [animation-delay:150ms]">
           <div className="relative aspect-[4/5] sm:aspect-[5/5] lg:aspect-[4/5] max-w-md mx-auto lg:max-w-none rounded-[2rem] overflow-hidden shadow-card ring-1 ring-sand">
             <Image
-              src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?q=80&w=1200&auto=format&fit=crop"
+              src="/images/brain-image.png"
               alt="Calm and supportive mental health care"
               fill
               priority
